@@ -1,0 +1,20 @@
+html{
+  font-size: 150%;
+}
+header{
+  background-color: fireBrick;
+  color: white;
+  font-size: 120%;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 1%;
+}
+
+table{
+  font-family: Arial;
+}
+td{
+  border: solid 1pt black;
+}
+th{
+  background-color: lightgrey;
+}

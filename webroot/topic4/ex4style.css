@@ -1,0 +1,59 @@
+html{
+  font-size: 120%;
+  font-family: arial;
+}
+form{
+    width: 40%;
+    margin: auto;
+}
+legend{
+    background: green;
+    color: white;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5em;
+    padding-block: 0.2em;
+    font-weight: bold;
+}
+
+#Sleeves{
+    margin-right: 0.2em;
+    border:none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+select{
+    display: flex;
+}
+
+fieldset{
+    border-color: rgba(2, 151, 2, 0.644);
+    margin-bottom: 0.3em;
+    background-color: rgba(234, 254, 219, 0.486);
+}
+
+
+#form{
+  border-color: inherit;
+}
+
+input, label{
+  display: flex;
+}
+#submit,#reset{
+    margin-inline: 20%;
+    color: white;
+    background-color: green;
+    padding: 0.5em 0.75em;
+    border-radius: 0.5em;
+}
+
+#buttons{
+  background-color: white;
+}
+
+span{
+  display: flex;
+}

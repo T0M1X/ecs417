@@ -1,0 +1,92 @@
+html {
+  background-color: DarkSlateBlue;
+  font-size: 120%;
+}
+
+header{
+  color: white;
+  background-color: fireBrick;
+  font-size: 200%;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 80%;
+  height: 5%;
+  font-weight: bold;
+  margin: auto;
+  padding: 2%;
+}
+
+h2{
+  margin: auto;
+  font-size: 60%;
+}
+.navigation{
+    color: green;
+    font-family: sans-serif;
+    font-size: 130%;
+    background-color: salmon;
+    text-orientation: sideways-right;
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 2%;
+    font-weight: bold;
+}
+
+.list {
+  float: left;
+  padding-right: 3%;
+}
+
+li a{
+  text-decoration: none
+}
+
+.main{
+  font-family: Optima, sans-serif;
+  padding-left: 1%;
+  padding-bottom: 1%;
+  padding-top: 1%;
+  padding-right: 1%;
+  padding: 2%;
+  background-color: white;
+  margin: auto;
+  width: 80%;
+  height: 5%;
+}
+
+h3{
+  font-weight: bold;
+  font-size: 120%;
+  text-decoration: underline;
+}
+
+p{
+  font-family: "Times New Roman", Times, serif;
+  margin-top: 0.5%;
+  font-size: 110%
+}
+
+img{
+  margin-top: 1%;
+  display: block;
+  width: 20%;
+}
+
+figcaption{
+  font-style: italic;
+  color: silver;
+}
+
+footer{
+  font-weight: bold;
+  padding: 2%;
+  color: white;
+  background-color: fireBrick;
+  margin: auto;
+  width: 80%;
+  height: 5%;
+}
+
+.p1{
+  font-style: italic;
+}
