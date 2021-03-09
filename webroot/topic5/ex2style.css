@@ -1,0 +1,81 @@
+html{
+  font-family: arial
+}
+
+h1{
+  font-size: 160%
+}
+header{
+  padding: 2%;
+  background-color: PaleGreen;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 100;
+  overflow: hidden
+}
+
+#l1{
+  float: left;
+  display: block;
+  padding: 1%;
+}
+
+li a{
+  text-decoration: none;
+}
+
+#main{
+  margin-top: 2%;
+  margin-left: 20em;
+  margin-right: 20em;
+}
+
+aside{
+  position: absolute;
+  right: 0em;
+  top: 0;
+  width: 15em;
+}
+
+#left{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 15em;
+}
+
+#container{
+   position: relative;
+}
+
+#skills, #hobbies, #movies{
+  background-color: WhiteSmoke;
+  padding: 8%;
+}
+
+#hyperlinks{
+  background-color: WhiteSmoke;
+  padding: 5%;
+}
+
+h4{
+  background-color: PaleGreen;
+  padding: 4%;
+}
+
+#text{
+  background-color: white;
+  padding: 12%;
+}
+
+#interests{
+  background-color: rgb(237,235,226);
+  color: rgb(130,125,95);
+  padding: 5%
+}
+
+figure{
+  float: right;
+}
