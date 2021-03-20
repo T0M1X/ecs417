@@ -48,3 +48,7 @@ hr{
 #ball{
   float: left;
 }
+
+#p1,#p2,#p3{
+  display:inline-block;
+}
