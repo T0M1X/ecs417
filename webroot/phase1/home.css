@@ -37,13 +37,43 @@ header{
 }
 
 h1{
-  font-size: 200%;
-  color: rgb(152,155,177);
+  font-size: 300%;
+  color: black;
   text-align: center;
 }
 
-img{
-  margin-top: 4em;
-  margin-left: 14em;
-  background-color: purple;
+#l2{
+  margin-top: 10%;
+  margin-left: 14%;
+  background-color: rgba(128,0,128,0.2);
+}
+
+#l2:hover{
+  background-color: white;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#login{
+  background-color: rgba(128,0,128,0.1);
+}
+
+#login:hover{
+  background-color: white;
+}
+
+#ball{
+  float: left;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  padding: 2%;
+  background-color: rgb(52,57,62);
+  color: white;
 }

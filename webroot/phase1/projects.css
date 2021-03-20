@@ -27,10 +27,6 @@ header{
   background-color: rgb(52,57,62);
 }
 
-article{
-  padding: 2%;
-}
-
 h1{
   font-size: 200%;
 }
@@ -49,4 +45,18 @@ p{
 
 #l2{
   font-weight: bold;
+}
+
+article{
+  background-color: PaleGreen;
+  margin: 1em;
+  padding: 2%;
+}
+
+hr{
+  border-color: green;
+}
+
+#ball{
+  float: left;
 }

@@ -47,3 +47,7 @@ section{
 hr{
   border-color: green;
 }
+
+#ball{
+  float: left;
+}
