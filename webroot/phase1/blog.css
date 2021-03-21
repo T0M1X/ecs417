@@ -31,6 +31,10 @@ h1{
   font-size: 160%;
 }
 
+hr{
+  border-color: green;
+}
+
 section{
   margin: 1em;
   background-color: palegreen;

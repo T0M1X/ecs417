@@ -52,3 +52,11 @@ hr{
 #p1,#p2,#p3{
   display:inline-block;
 }
+
+figure{
+  float: right;
+}
+
+figcaption{
+  font-style: italic;
+}

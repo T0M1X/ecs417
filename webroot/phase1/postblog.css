@@ -21,10 +21,15 @@ fieldset{
   border: none;
 }
 
-input{
+input, textarea{
   border: none;
   padding: 1.3%;
   width: 40%;
+}
+
+textarea{
+  padding-bottom: 8%;
+  font-family: arial;
 }
 
 button{
