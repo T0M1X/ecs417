@@ -44,6 +44,13 @@ section{
   margin: 1em;
 }
 
+body {
+  background-image: url('space.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
 hr{
   border-color: green;
 }

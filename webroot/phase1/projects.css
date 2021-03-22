@@ -10,6 +10,13 @@ ul {
   overflow: hidden
 }
 
+body {
+  background-image: url('space.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
 li a{
   text-decoration: none;
   float: left;

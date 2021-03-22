@@ -18,6 +18,13 @@ li a{
   color: rgb(152,155,157)
 }
 
+body {
+  background-image: url('space.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
 li a:hover{
   color: rgb(250,250,250)
 }
