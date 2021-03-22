@@ -67,3 +67,7 @@ hr{
 #ball{
   float: left;
 }
+
+a{
+  text-decoration: none;
+}
