@@ -21,7 +21,7 @@ $passw = $_POST["pass"];
 while ($line = $deets->fetch_array()) {
   echo $line["email"];
   echo $line["password"];
-  echo "yo";
+  echo "<br>";
   echo $user;
   echo $passw;
   if($user == $line["email"] and $passw == $line["password"]){
@@ -30,6 +30,6 @@ while ($line = $deets->fetch_array()) {
   }
 }
 
-echo "not found :(";
+echo "<p>not found :(</p>";
 $mysql->close();
 ?>
