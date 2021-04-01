@@ -22,8 +22,6 @@ while ($line = $deets->fetch_assoc()){
   if($enteredUser == $line["email"] and $enteredPassword == $line["password"]){
     header("Location:homepage.html");
   }
-  else {
-  }
 }
 
 header("Location:login.html");
