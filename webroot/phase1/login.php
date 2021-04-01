@@ -15,13 +15,14 @@ if ($mysql->connect_error) {
 $query = "SELECT email, password FROM USERS";
 $deets = $mysql->query($query);
 
-$user = $_POST["mail"];
-$passw = $_POST["pass"];
+$user = $_GET["mail"];
+$passw = $_GET["pass"];
 
 while ($line = $deets->fetch_array()) {
   echo $line["email"];
   echo $line["password"];
   echo "<br>";
+  echo "<p>yo</p>";
   echo $user;
   echo $passw;
   if($user == $line["email"] and $passw == $line["password"]){
