@@ -20,14 +20,13 @@ $enteredPassword = $_POST["password"];
 
 while ($line = $deets->fetch_assoc()){
   if($enteredUser == $line["email"] and $enteredPassword == $line["password"]){
-    echo "it worked!";
     header("Location:homepage.html");
   }
   else {
-    echo "Invalid access";
-    header("Location:login.html");
   }
 }
+
+header("Location:login.html");
 
 $conn->close();
 ?>
