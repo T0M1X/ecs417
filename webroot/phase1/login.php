@@ -6,25 +6,28 @@ $dbpwd = getenv("DATABASE_PASSWORD");
 $dbname = getenv("DATABASE_NAME");
 
 // Creates connection
-$conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
+$mysql = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
 // Checks connection
-if ($conn->connect_error) {
- die("Connection failed: " . $conn->connect_error);
+if ($mysql->connect_error) {
+ die("Connection failed: " . $mysql->connect_error);
 }
 
-$retrieve = "SELECT * FROM USERS";
-$deets = $conn->query($retrieve);
+$retrieve = "SELECT email, password FROM USERS";
+$deets = $mysql->query($retrieve);
 
-$enteredUser = $_POST["email"];
-$enteredPassword = $_POST["password"];
+$enteredUser = $_POST["mail"];
+$enteredPassword = $_POST["pass"];
+
+
+
+$lines = $deets->num_rows;
 
 while ($line = $deets->fetch_assoc()){
   if($enteredUser == $line["email"] and $enteredPassword == $line["password"]){
-    header("Location:homepage.html");
+    echo "found!!!!";
+    header("Location:index.php");
   }
 }
 
-header("Location:login.html");
-
-$conn->close();
+$mysql->close();
 ?>
