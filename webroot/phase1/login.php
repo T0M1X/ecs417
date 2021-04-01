@@ -18,8 +18,7 @@ $deets = $mysql->query($query);
 $user = $_POST["mail"];
 $passw = $_POST["pass"];
 
-
-while ($line = mysql_fetch_array($deets)) {
+while ($line = mysqli_fetch_array($results)) {
   if($user == $line["email"] and $passw == $line["password"]){
     echo "found!!!!";
     header("Location:index.php");
