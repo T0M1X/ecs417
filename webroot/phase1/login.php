@@ -12,22 +12,20 @@ if ($mysql->connect_error) {
  die("Connection failed: " . $mysql->connect_error);
 }
 
-$retrieve = "SELECT email, password FROM USERS";
-$deets = $mysql->query($retrieve);
+$query = "SELECT email, password FROM USERS";
+$deets = $mysql->query($query);
 
-$enteredUser = $_POST["mail"];
-$enteredPassword = $_POST["pass"];
+$user = $_POST["mail"];
+$passw = $_POST["pass"];
 
 
-
-$lines = $deets->num_rows;
-
-while ($line = $deets->fetch_assoc()){
-  if($enteredUser == $line["email"] and $enteredPassword == $line["password"]){
+while ($line = mysql_fetch_array($deets)) {
+  if($user == $line["email"] and $passw == $line["password"]){
     echo "found!!!!";
     header("Location:index.php");
   }
 }
 
+echo "not found :(";
 $mysql->close();
 ?>
