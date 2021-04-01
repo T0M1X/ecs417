@@ -15,8 +15,8 @@ if ($mysql->connect_error) {
 $query = "SELECT email, password FROM USERS";
 $deets = $mysql->query($query);
 
-$user = $_GET["mail"];
-$passw = $_GET["pass"];
+$user = $_POST["mail"];
+$passw = $_POST["pass"];
 
 while ($line = $deets->fetch_array()) {
   echo $line["email"];
