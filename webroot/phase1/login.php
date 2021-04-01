@@ -19,6 +19,8 @@ $user = $_POST["mail"];
 $passw = $_POST["pass"];
 
 while ($line = $deets->fetch_array()) {
+  echo $line["email"];
+  echo $line["password"];
   if($user == $line["email"] and $passw == $line["password"]){
     echo "found!!!!";
     header("Location:index.php");
