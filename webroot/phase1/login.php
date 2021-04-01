@@ -19,18 +19,11 @@ $user = $_POST["mail"];
 $passw = $_POST["pass"];
 
 while ($line = $deets->fetch_array()) {
-  echo $line["email"];
-  echo $line["password"];
-  echo "<br>";
-  echo "<p>yo</p>";
-  echo $user;
-  echo $passw;
   if($user == $line["email"] and $passw == $line["password"]){
-    echo "found!!!!";
     header("Location:index.php");
   }
 }
 
-echo "<p>not found :(</p>";
+header("Location:login.html");
 $mysql->close();
 ?>
