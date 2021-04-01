@@ -18,7 +18,7 @@ $deets = $conn->query($retrieve);
 $enteredUser = $_POST["email"];
 $enteredPassword = $_POST["password"];
 
-while ($line = $deets->fetch.assoc()){
+while ($line = $deets->fetch_assoc()){
   if($enteredUser == $line["email"] and $enteredPassword == $line["password"]){
     header("Location:homepage.html");
   }
