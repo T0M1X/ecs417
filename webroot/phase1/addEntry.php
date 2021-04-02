@@ -22,7 +22,9 @@ $today = date("m.d.y");
 
 session_start();
 
-$sql = "INSERT INTO POSTS VALUES ('$num','$title','$message','$_SESSION['person']','$today')";
+$usermail = $_SESSSION['person'];
+
+$sql = "INSERT INTO POSTS (ID,title,post,email,date) VALUES ('$num','$title','$message','$usermail','$today')";
 
 if ($mysql->query($sql) === TRUE) {
   echo "New record created successfully";
