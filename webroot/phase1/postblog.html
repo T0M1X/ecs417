@@ -8,12 +8,12 @@
   <body>
     <br>
     <aside>
-      <form action="index.php" method="POST">
+      <form action="addEntry.php" method="POST">
         <fieldset>
           <h1 class="center">Add Blog</h1>
-          <input class="center" type = "text" placeholder="Title" required>
+          <input class="center" type = "text" name="title" placeholder="Title" required>
           <br>
-          <textarea cols="30" row="10" id="text" class="center" type = "text" placeholder="Enter your text here" required></textarea>
+          <textarea cols="30" row="10" id="text" class="center" type = "text" name="message" placeholder="Enter your text here" required></textarea>
           <br>
           <br>
           <button class="center" type = "submit" id="submit">Post</button>

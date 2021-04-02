@@ -17,20 +17,21 @@ $deets = $mysql->query($query);
 
 $user = $_POST["mail"];
 $passw = hash('sha512',$_POST["pass"]);
+$found = 0;
 
 while ($line = $deets->fetch_array()) {
-  echo $user;
-  echo $passw;
-  echo "<p>---<p>";
-  echo $line["email"];
-  echo $line["password"];
   if($user == $line["email"] and $passw == $line["password"]){
+    $found = $found + 1;
     session_start();
     $_SESSION['person'] = $user;
     header("Location:index.php");
+    exit();
   }
 }
 
-//header("Location:login.html");
+if ($found == 0){
+  header("Location:login.login.html");
+  exit();
+}
 $mysql->close();
 ?>
