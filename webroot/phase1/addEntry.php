@@ -28,6 +28,7 @@ if ($mysql->query($sql) === TRUE) {
   echo "New record created successfully";
 }
 
+
 header("Location:blog.php");
 exit();
 $mysql->close();
