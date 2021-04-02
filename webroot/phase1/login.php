@@ -16,10 +16,12 @@ $query = "SELECT email, password FROM USERS";
 $deets = $mysql->query($query);
 
 $user = $_POST["mail"];
-$passw = $_POST["pass"];
+$passw = hash('sha512',$_POST["pass"]);
 
 while ($line = $deets->fetch_array()) {
   if($user == $line["email"] and $passw == $line["password"]){
+    session_start();
+    $_SESSION['person'] = $user;
     header("Location:index.php");
   }
 }
