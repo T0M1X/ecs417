@@ -14,7 +14,7 @@
 				<li id = "l1"><a href="about.html">About Me & Experience</a></li>
 				<li id = "l1"><a href="skills.html">Skills & Education</a></li>
 				<li id = "l1"><a href="projects.html">Projects</a></li>
-				<li id = "l1"><a href="blog.html">Blog</a></li>
+				<li id = "l1"><a href="blog.php">Blog</a></li>
       </ul>
     </nav>
   </header>
@@ -24,9 +24,19 @@
       <hr>
       <p>The purpose of this blog is to inform people what is going on in my work/education.</p>
       <br>
-      <form action="postblog.html">
-        <input id="new" type="submit" value="Add a new post">
-      </form>
+      <?php
+        session_start();
+        if(isset($_SESSION['person'])){
+          echo "<form action='postblog.html'>";
+            echo "<input id='new' type='submit' value='Add a new post'>";
+          echo "</form>";
+        }
+        else {
+          echo "<form action='login.html'>";
+            echo "<input id='new' type='submit' value='Add a new post'>";
+          echo "</form>";
+        }
+      ?>
     </section>
     <section>
       <h1>My Posts</h2>

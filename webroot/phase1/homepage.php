@@ -14,7 +14,7 @@
 				<li id = "l1"><a href="about.html">About Me & Experience</a></li>
 				<li id = "l1"><a href="skills.html">Skills & Education</a></li>
 				<li id = "l1"><a href="projects.html">Projects</a></li>
-				<li id = "l1"><a href="blog.html">Blog</a></li>
+				<li id = "l1"><a href="blog.php">Blog</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -38,7 +38,6 @@
 			<?php
 				session_start();
 				if(isset($_SESSION['person'])){
-					echo "<p>".$_SESSION['person']."</p>";
 					echo "<a href='logout.php'><img src='logout.png' alt='logout' class='center' id = 'login'></img></a>";
 				}
 				else {
