@@ -22,6 +22,7 @@ $today = date("m.d.y");
 
 session_start();
 
+
 $sql = "INSERT INTO POSTS ('ID','title','post','email','date') VALUES ($num,$title,$message,$_SESSION['person'],$today)";
 
 if ($mysql->query($sql) === TRUE) {

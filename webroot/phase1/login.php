@@ -30,7 +30,7 @@ while ($line = $deets->fetch_array()) {
 }
 
 if ($found == 0){
-  header("Location:login.login.html");
+  header("Location:login.html");
   exit();
 }
 $mysql->close();
