@@ -22,7 +22,12 @@ $today = date("m.d.y");
 
 session_start();
 
-$mysql->query("INSERT INTO POSTS ($num,$title,$message,$_SESSION['person'],$today)");
+$sql = "INSERT INTO POSTS VALUES ($num,$title,$message,$_SESSION['person'],$today)";
+
+if ($mysql->query($sql) === TRUE) {
+  echo "New record created successfully";
+}
+
 header("Location:blog.php");
 exit();
 $mysql->close();
