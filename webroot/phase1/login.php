@@ -19,6 +19,11 @@ $user = $_POST["mail"];
 $passw = hash('sha512',$_POST["pass"]);
 
 while ($line = $deets->fetch_array()) {
+  echo $user;
+  echo $passw;
+  echo "<p>---<p>";
+  echo $line["email"];
+  echo $line["password"];
   if($user == $line["email"] and $passw == $line["password"]){
     session_start();
     $_SESSION['person'] = $user;
@@ -26,6 +31,6 @@ while ($line = $deets->fetch_array()) {
   }
 }
 
-header("Location:login.html");
+//header("Location:login.html");
 $mysql->close();
 ?>
