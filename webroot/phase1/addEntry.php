@@ -12,9 +12,6 @@ if ($mysql->connect_error) {
  die("Connection failed: " . $mysql->connect_error);
 }
 
-$query = "SELECT * FROM POSTS";
-$posts = $mysql->query($query);
-
 $title = $_POST["title"];
 $message = $_POST["message"];
 $today = date("y.m.d");
@@ -29,8 +26,8 @@ if ($mysql->query($sql) === TRUE) {
   echo "New record created successfully";
 }
 
-//header("Location:blog.php");
-//exit();
+header("Location:blog.php");
+exit();
 $mysql->close();
 
 ?>

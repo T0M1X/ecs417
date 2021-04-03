@@ -39,9 +39,39 @@
       ?>
     </section>
     <section>
-      <h1>My Posts</h2>
+      <h1>My Posts</h1>
       <hr>
-      <p><strong>20/03/2021 </strong> - Coding my portfolio using HTML (hypertext markup language) and CSS (cascading style sheets)</p>
+      <div>
+        <h2>Front end of my portfolio</h2>
+        <p><strong>20/03/2021 </strong> - Coding my portfolio using HTML (hypertext markup language) and CSS (cascading style sheets)</p>
+      </div>
+      <br>
+      <?php
+      $dbhost = getenv("MYSQL_SERVICE_HOST");
+      $dbport = getenv("MYSQL_SERVICE_PORT");
+      $dbuser = getenv("DATABASE_USER");
+      $dbpwd = getenv("DATABASE_PASSWORD");
+      $dbname = getenv("DATABASE_NAME");
+
+      // Creates connection
+      $mysql = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
+      // Checks connection
+      if ($mysql->connect_error) {
+       die("Connection failed: " . $mysql->connect_error);
+      }
+
+      $query = "SELECT * FROM POSTS ORDER BY date DESC";
+      $posts = $mysql->query($query);
+      if($posts->num_rows > 0){
+        while ($line = $posts->fetch_array()) {
+          echo "<div>";
+            echo "<h2>".$line['title']."</h2>";
+            echo "<p><strong>".$line['date']." </strong> - ".$line['post']."</p>";
+          echo "</div>";
+          echo "<br>";
+        }
+      }
+      ?>
     </section>
   </body>
 </html>
