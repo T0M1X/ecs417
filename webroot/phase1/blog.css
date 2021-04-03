@@ -62,6 +62,9 @@ section{
   font-size: 120%;
 }
 
+#new:hover{
+  background-color: blue;
+}
 
 div{
   background-color: lightblue;
