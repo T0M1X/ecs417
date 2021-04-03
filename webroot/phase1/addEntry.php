@@ -18,20 +18,22 @@ $num = $posts->num_rows;
 
 $title = $_POST["title"];
 $message = $_POST["message"];
-$today = date("d.m.y");
+$today = date("y.m.d");
 
 session_start();
 
+echo $num;
+
 $usermail = $_SESSION['person'];
 
-$sql = "INSERT INTO POSTS (ID,title,post,email,date) VALUES ('$num','$title','$message','$usermail','$today')";
+$sql = "INSERT INTO POSTS VALUES ('$num','$title','$message','$usermail','$today')";
 
 if ($mysql->query($sql) === TRUE) {
   echo "New record created successfully";
 }
 
-header("Location:blog.php");
-exit();
+//header("Location:blog.php");
+//exit();
 $mysql->close();
 
 ?>
