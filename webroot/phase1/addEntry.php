@@ -14,7 +14,6 @@ if ($mysql->connect_error) {
 
 $query = "SELECT * FROM POSTS";
 $posts = $mysql->query($query);
-$num = $posts->num_rows;
 
 $title = $_POST["title"];
 $message = $_POST["message"];
@@ -22,11 +21,9 @@ $today = date("y.m.d");
 
 session_start();
 
-echo $num;
-
 $usermail = $_SESSION['person'];
 
-$sql = "INSERT INTO POSTS VALUES ('$num','$title','$message','$usermail','$today')";
+$sql = "INSERT INTO POSTS VALUES (0,'$title','$message','$usermail','$today')";
 
 if ($mysql->query($sql) === TRUE) {
   echo "New record created successfully";
