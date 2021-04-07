@@ -65,7 +65,10 @@
                 if(mm<10){
                     mm='0'+mm;
                 }
-                today = dd+'/'+mm+'/'+yyyy;
+                var hh = today.getHours();
+                var tt = today.getMinutes();
+                var ss = today.getSeconds();
+                today = dd+'/'+mm+'/'+yyyy + " " + hh+":"+tt+":"+ss;
                 document.getElementById("prevtitle").innerHTML = title;
                 document.getElementById("prevmessage").innerHTML = "<strong>"+today+" </strong> - "+message;
                 var prev = document.getElementById('preview');
