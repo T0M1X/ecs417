@@ -3,7 +3,7 @@ require_once "dbscon.php";
 
 $title = $_POST["title"];
 $message = $_POST["message"];
-$today = date("y.m.d");
+$today = date("y.m.d H:i:s");
 
 session_start();
 

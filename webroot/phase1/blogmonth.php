@@ -89,7 +89,7 @@
         $all_data = bubble($all_data);
         $num = count($all_data);
         for($i = 0; $i < $num;$i++){
-          $date = date("d/m/Y", strtotime($all_data[$i]['date']));
+          $date = date("d/m/Y H:i:s", strtotime($all_data[$i]['date']));
           $postmonth = date("d",strtotime($date));
           if($postmonth == $_POST['month']){
             echo "<div>";
