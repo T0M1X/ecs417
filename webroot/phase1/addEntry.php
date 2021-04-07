@@ -1,16 +1,5 @@
 <?php
-$dbhost = getenv("MYSQL_SERVICE_HOST");
-$dbport = getenv("MYSQL_SERVICE_PORT");
-$dbuser = getenv("DATABASE_USER");
-$dbpwd = getenv("DATABASE_PASSWORD");
-$dbname = getenv("DATABASE_NAME");
-
-// Creates connection
-$mysql = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
-// Checks connection
-if ($mysql->connect_error) {
- die("Connection failed: " . $mysql->connect_error);
-}
+require_once "dbscon.php";
 
 $title = $_POST["title"];
 $message = $_POST["message"];
@@ -20,10 +9,16 @@ session_start();
 
 $usermail = $_SESSION['person'];
 
-$sql = "INSERT INTO POSTS VALUES (0,'$title','$message','$usermail','$today')";
+$query = "SELECT * FROM POSTS";
+$posts = $mysql->query($query);
+$num = $posts->num_rows + 1;
+
+$sql = "INSERT INTO POSTS VALUES ($num,'$title','$message','$usermail','$today')";
 
 if ($mysql->query($sql) === TRUE) {
   echo "New record created successfully";
+} else {
+  echo "It failed!";
 }
 
 header("Location:blog.php");

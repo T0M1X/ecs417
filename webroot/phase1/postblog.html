@@ -4,20 +4,81 @@
     <title>Post Blog</title>
     <link rel="stylesheet" href="reset.css" type="text/css"/>
     <link rel="stylesheet" href="postblog.css" type="text/css"/>
+    <script src="postblog.js"></script>
   </hgroup>
+  <script>
+    function preventempty(){
+      document.getElementById('title').style.background = "white";
+      document.getElementById('message').style.background = "white";
+      var title = document.forms["blogform"]["title"].value;
+      var message = document.forms["blogform"]["message"].value;
+      if(title == "" && message == ""){
+        document.getElementById('title').style.background = "yellow";
+        document.getElementById('message').style.background = "yellow";
+        event.preventDefault();
+        alert("Please fill in the Title and the Message.");
+      }
+      if(title == "" && message != ""){
+        document.getElementById('title').style.background = "yellow";
+        event.preventDefault();
+        alert("Please fill in the Title.");
+      }
+      if(title != "" && message == ""){
+        document.getElementById('message').style.background = "yellow";
+        event.preventDefault();
+        alert("Please fill in the Message.");
+      }
+    }
+  </script>
   <body>
     <br>
     <aside>
-      <form action="addEntry.php" method="POST">
+      <form action="addEntry.php" method="POST" id="blogform">
         <fieldset>
           <h1 class="center">Add Blog</h1>
-          <input class="center" type = "text" name="title" placeholder="Title" required>
+          <input class="center" type = "text" id="title" name="title" placeholder="Title">
           <br>
-          <textarea cols="30" row="10" id="text" class="center" type = "text" name="message" placeholder="Enter your text here" required></textarea>
+          <textarea cols="30" row="10" id="message" class="center" type = "text" name="message" placeholder="Enter your text here"></textarea>
           <br>
           <br>
-          <button class="center" type = "submit" id="submit">Post</button>
+          <button onclick="preventempty()" class="center" type = "submit" id="submit">Post</button>
           <button type = "reset" onclick="return confirm('Are you sure you want to reset all text?');" class="center" id="clear">Clear</button>
+          <br>
+          <br>
+          <button onclick="showprev()" class="center" type="button" id="prevbutton">Preview</button>
+          <br>
+          <br>
+          <div id = "preview">
+            <h2 id="prevtitle"></h2>
+            <p id="prevmessage"></p>
+            <script>
+            function showprev(){
+                var title = document.getElementById('title').value;
+                var message = document.forms["blogform"]["message"].value;
+                var today = new Date();
+                var dd = today.getDate();
+                var mm = today.getMonth()+1;
+                var yyyy = today.getFullYear();
+                if(dd<10){
+                    dd='0'+dd;
+                }
+                if(mm<10){
+                    mm='0'+mm;
+                }
+                today = dd+'/'+mm+'/'+yyyy;
+                document.getElementById("prevtitle").innerHTML = title;
+                document.getElementById("prevmessage").innerHTML = "<strong>"+today+" </strong> - "+message;
+                var prev = document.getElementById('preview');
+                var display = prev.style.display;
+                if (display == 'block') {
+                 prev.style.display = 'none';
+               }
+               else {
+                 prev.style.display = 'block';
+               }
+              }
+            </script>
+          </div>
         </fieldset>
       </form>
     </aside>

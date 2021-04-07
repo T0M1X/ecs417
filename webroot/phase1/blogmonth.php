@@ -91,11 +91,13 @@
         for($i = 0; $i < $num;$i++){
           $date = date("d/m/Y", strtotime($all_data[$i]['date']));
           $postmonth = date("d",strtotime($date));
-          echo "<div>";
-          echo "<h2>".$all_data[$i]['title']."</h2>";
-          echo "<p><strong>".$date." </strong> - ".$all_data[$i]['post']."</p>";
-          echo "</div>";
-          echo "<br>";
+          if($postmonth == $_POST['month']){
+            echo "<div>";
+            echo "<h2>".$all_data[$i]['title']."</h2>";
+            echo "<p><strong>".$date." </strong> - ".$all_data[$i]['post']."</p>";
+            echo "</div>";
+            echo "<br>";
+          }
         }
       }
       ?>

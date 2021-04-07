@@ -49,17 +49,29 @@ button{
   left: 30%;
 }
 
-#submit, #clear {
+#submit, #clear, #prevbutton{
   display:inline-block;
+}
+
+#prevbutton{
+  margin-left: 10%;
 }
 
 button:hover{
   background-color: navy;
 }
 
-
 .center {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+div{
+  background-color: lightblue;
+  padding: 1.5%;
+}
+
+#preview{
+  display: none;
 }
